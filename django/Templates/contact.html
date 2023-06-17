@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+
+{% block title %}Contact{% endblock %}
+
+{% block body %}
+<div class="container-fluid my-4">
+    <img src="Https://source.unsplash.com/1600x400?phone" class= "d-block w-100" alt="">
+</div>
+<div class = "text-center">
+<h1> Contact Us <h1>
+</div>
+<div class = "text-center my-4">
+    <form method = "post" action = "/contact/">
+        {% csrf_token %}
+        <div class = "my-2">
+          <label for="validationCustom01" class="form-label">First name</label>
+          <input type="text" id="validationCustom01"  name = "fname" placeholder="first name" required>
+          <div class="valid-feedback">
+            Looks good!
+          </div>
+        </div>
+        <div class = "my-2">
+          <label for="validationCustom02" class="form-label">Last name</label>
+          <input type="text" id="validationCustom02" name = "lname"  placeholder = "Last name" required>
+          <div class="valid-feedback">
+            Looks good!
+          </div>
+        </div>
+        <div class = "my-2">
+            <label for="validationCustom02" class="form-label">Email</label>
+            <input type="Email" id="validationCustom02" name = "email"  placeholder = "Email" required>
+            <div class="valid-feedback">
+              Looks good!
+            </div>
+        <div class = "my-2">
+          <label for="validationCustom03" class="form-label">City</label>
+          <input type="text"  id="validationCustom03" name = "city"  required>
+          <div class="invalid-feedback">
+            Please provide a valid city.
+          </div>
+        
+        </div>
+    <div class = "my-2"> 
+       <label> Phone </label>
+        <input type="phone" name = "phone" >
+    </div>
+        </div>
+        <div class="col-12 my-4 text-center">
+          <button class="btn btn-primary" type="submit">Submit form</button>
+        </div>
+      </form>
+</div>
+{% endblock body %}
